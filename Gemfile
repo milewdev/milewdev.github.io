@@ -1,3 +1,5 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
+
 gem 'foundation'
-gem 'compass'
+gem "sass", "~> 3.3.0"
+gem "compass", "~> 1.0"

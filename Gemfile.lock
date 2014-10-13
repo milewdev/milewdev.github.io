@@ -21,12 +21,13 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
-    sass (3.4.5)
+    sass (3.3.14)
     thor (0.19.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass
+  compass (~> 1.0)
   foundation
+  sass (~> 3.3.0)
