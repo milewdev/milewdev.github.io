@@ -21,7 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_config|
     vb.name = VM_NAME
     vb.gui = true
   end
-  
+
   with vagrant_config do
     install_atom
     install_iterm2
@@ -29,17 +29,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_config|
     install_git                                         # source is on github
     install_github_for_mac
     install_homebrew                                    # needed to install ruby
-    install_node                                        # needed for foundation
     install_ruby '2.1.2'
     install_bundler
     git_clone PROJECT_GITHUB_URL, PROJECT_VM_DIR
     cd PROJECT_VM_DIR do
-      npm_install
       bundle_install
     end
     reboot_vm
   end
-  
+
 end
 
 
