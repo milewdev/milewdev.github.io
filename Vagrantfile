@@ -37,6 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_config|
       bundle_install
       npm_install
     end
+    add_to_path "#{PROJECT_VM_DIR}/node_modules/.bin"
     reboot_vm
   end
 
