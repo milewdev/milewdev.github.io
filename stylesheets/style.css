@@ -11,7 +11,7 @@ body {
 header.page-header {
   margin: 2rem auto;
   position: relative;
-  max-width: 30rem; }
+  max-width: 40rem; }
 
 nav.page-nav-bar {
   background: #3671e7;
@@ -60,13 +60,22 @@ h1.page-footer {
   font-weight: normal;
   text-align: center; }
 
-.projects {
+section.introduction {
   background-color: white;
-  padding-top: 2rem;
+  font-size: 1.2rem;
+  padding-top: 4rem;
+  text-align: center; }
+  section.introduction p {
+    margin: 0 auto;
+    text-align: left;
+    width: 26rem; }
+
+section.projects {
+  background-color: white;
   padding-bottom: 2rem;
   text-align: center; }
 
-.project {
+article.project {
   display: inline-block;
   height: 10rem;
   margin: 1rem;
@@ -75,18 +84,18 @@ h1.page-footer {
   width: 15rem;
   text-align: initial;
   vertical-align: top; }
-  .project p {
+  article.project p {
     margin: 0.8rem 0; }
-  .project menu {
+  article.project menu {
     text-align: center;
     width: 100%; }
-  .project menuitem {
+  article.project menuitem {
     margin-left: 0.6rem;
     margin-right: 0.6rem; }
-    .project menuitem a {
+    article.project menuitem a {
       color: blue;
       text-decoration: none; }
-      .project menuitem a:hover {
+      article.project menuitem a:hover {
         text-decoration: underline; }
 
 h1.project-title {

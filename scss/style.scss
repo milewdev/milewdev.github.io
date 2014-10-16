@@ -61,7 +61,7 @@ body {
 header.page-header {
   margin: 2rem auto;
   position: relative;
-  max-width: 30rem;
+  max-width: 40rem;
 }
 
 nav.page-nav-bar {
@@ -138,17 +138,34 @@ h1.page-footer {
 
 
 //
+// introduction
+//
+
+section.introduction {
+  background-color: white;
+  font-size: 1.2rem;
+  padding-top: 4rem;        // allow space for main nav bar
+  text-align: center;
+
+  p {
+    margin: 0 auto;
+    text-align: left;
+    width: 26rem;
+  }
+}
+
+
+//
 // projects
 //
 
-.projects {
+section.projects {
   background-color: white;
-  padding-top: 2rem;        // allow space for main nav bar
   padding-bottom: 2rem;     // allow space before footer
   text-align: center;
 }
 
-.project {
+article.project {
   display: inline-block;
   height: 10rem;
   margin: 1rem;
