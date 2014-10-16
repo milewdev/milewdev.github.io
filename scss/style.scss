@@ -21,6 +21,17 @@
   border-radius: 3px;
 }
 
+@mixin link-style($color) {
+  a {
+    color: $color;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
 
 //
 // reset
@@ -36,12 +47,13 @@ body, div, header, footer, section, article, h1, menu, menuitem {
 // general
 //
 
-h1, h2, h3, h4, h5, menuitem {
-  font-family: Georgia;
+h1, h2, h3, h4, h5, menuitem, footer {
+  font-family: 'Lucida Console', sans-serif;
 }
 
 body {
   background-color: #444;
+  font-family: Georgia, serif;
 }
 
 main {
@@ -105,6 +117,8 @@ menu.page-nav {
   }
 
   menuitem {
+    @include link-style(inherit);
+
     color: white;
     font-size: 0.8rem;
     letter-spacing: 1px;            // make the small letters are more visible
@@ -113,15 +127,6 @@ menu.page-nav {
     // height.  Use left and right margins to allow some space between the menu
     // items.
     padding: 0.8em 1.2em;           // t+b l+r
-
-    a {
-      color: inherit;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 }
 
@@ -136,13 +141,15 @@ footer.page-footer {
   // to the bottom of the page the copyright notice is not jammed to the bottom
   // of the page.
   padding: 0.6rem 0;
-}
 
-h1.page-footer {
-  color: #ddd;
-  font-size: 0.7rem;
-  font-weight: normal;
-  text-align: center;
+  p {
+    @include link-style(inherit);
+
+    color: #bbb;
+    font-size: 0.8rem;
+    margin: 0.2rem;
+    text-align: center;
+  }
 }
 
 
@@ -193,17 +200,10 @@ article.project {
   }
 
   menuitem {
+    @include link-style(blue);
+
     margin-left: 0.6rem;
     margin-right: 0.6rem;
-
-    a {
-      color: blue;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
   }
 }
 
