@@ -2,31 +2,16 @@ body, div, header, footer, section, article, h1, menu, menuitem {
   margin: 0;
   padding: 0; }
 
-a {
-  color: inherit;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
-
 h1, h2, h3, h4, h5, menuitem {
   font-family: Georgia; }
 
 body {
-  background-color: black; }
-
-h1.page-title {
-  color: white;
-  font-size: 1.4em;
-  font-weight: normal;
-  letter-spacing: 1px;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  text-align: center; }
+  background-color: #444; }
 
 nav.page-nav {
-  margin: 0 auto;
+  margin: 2rem auto;
   position: relative;
-  max-width: 600px; }
+  max-width: 30rem; }
 
 menu.page-nav {
   background: #3671e7;
@@ -37,8 +22,8 @@ menu.page-nav {
   background: -ms-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
   background: linear-gradient(to bottom, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
-  border-radius: 3px;
   box-shadow: 0 0 6px 0px #333;
+  border-radius: 3px;
   padding-top: 0.7rem;
   padding-bottom: 0.7rem;
   position: absolute;
@@ -60,6 +45,11 @@ menu.page-nav {
       border-left: none; }
     menu.page-nav menuitem:last-child {
       border-right: none; }
+    menu.page-nav menuitem a {
+      color: inherit;
+      text-decoration: none; }
+      menu.page-nav menuitem a:hover {
+        text-decoration: underline; }
 
 footer.page-footer {
   padding-top: 0.6rem;
@@ -74,31 +64,37 @@ h1.page-footer {
 .projects {
   background-color: white;
   padding-top: 2rem;
+  padding-bottom: 2rem;
   text-align: center; }
 
 .project {
-  background-color: #f90;
-  border-radius: 0.4rem;
   display: inline-block;
-  height: 11rem;
-  margin: 2rem;
+  height: 10rem;
+  margin: 1rem;
   padding: 1rem;
   position: relative;
   width: 15rem;
   text-align: initial;
   vertical-align: top; }
+  .project p {
+    margin: 0.8rem 0; }
   .project menu {
-    bottom: 1rem;
-    left: 0;
-    position: absolute;
     text-align: center;
     width: 100%; }
   .project menuitem {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem; }
+    margin-left: 0.6rem;
+    margin-right: 0.6rem; }
+    .project menuitem a {
+      color: blue;
+      text-decoration: none; }
+      .project menuitem a:hover {
+        text-decoration: underline; }
 
 h1.project-title {
-  font-size: 1.3rem;
+  font-family: Garamond;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
   text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

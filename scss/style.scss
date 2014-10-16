@@ -4,21 +4,40 @@
 
 
 //
+// constants
+//
+
+$border-radius: 3px;
+
+
+//
+// mixins
+//
+
+@mixin gradient {
+  // See http://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%200\%25\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%2019\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%2076\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%20100\%25\%29\%3B'
+  background: rgba(54,113,231,1);
+  background: -moz-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(54,113,231,1)), color-stop(19%, rgba(54,113,231,1)), color-stop(76%, rgba(25,79,215,1)), color-stop(100%, rgba(25,79,215,1)));
+  background: -webkit-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -o-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -ms-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
+}
+
+@mixin shadow {
+  box-shadow: 0 0 6px 0px #333;
+}
+
+
+//
 // reset
 //
 
 body, div, header, footer, section, article, h1, menu, menuitem {
   margin: 0;
   padding: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 
@@ -31,7 +50,7 @@ h1, h2, h3, h4, h5, menuitem {
 }
 
 body {
-  background-color: black;
+  background-color: #444;
 }
 
 
@@ -39,37 +58,17 @@ body {
 // header
 //
 
-h1.page-title {
-  color: white;
-  font-size: 1.4em;
-  font-weight: normal;
-  letter-spacing: 1px;
-  margin-top: 1em;
-  margin-bottom: 2em;
-  text-align: center;
-}
-
 nav.page-nav {
-  margin: 0 auto;
+  margin: 2rem auto;
   position: relative;
-  max-width: 600px;
+  max-width: 30rem;
 }
 
 menu.page-nav {
+  @include gradient;
+  @include shadow;
 
-  // All of this to set a gradient.
-  // See http://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%200\%25\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%2019\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%2076\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%20100\%25\%29\%3B'
-  background: rgba(54,113,231,1);
-  background: -moz-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(54,113,231,1)), color-stop(19%, rgba(54,113,231,1)), color-stop(76%, rgba(25,79,215,1)), color-stop(100%, rgba(25,79,215,1)));
-  background: -webkit-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -o-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -ms-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
-
-  border-radius: 3px;
-  box-shadow: 0 0 6px 0px #333;
+  border-radius: $border-radius;
 
   // Must set left and right padding to zero in order
   // for the horizontally centered, absolutely positioned
@@ -100,6 +99,15 @@ menu.page-nav {
     &:last-child {
       border-right: none;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
@@ -128,37 +136,48 @@ h1.page-footer {
 .projects {
   background-color: white;
   padding-top: 2rem;        // allow space for main nav bar
+  padding-bottom: 2rem;     // allow space before footer
   text-align: center;
 }
 
 .project {
-  background-color: #f90;
-  border-radius: 0.4rem;
-  // box-shadow: 0px 0px 5px 3px #aaa;
   display: inline-block;
-  height: 11rem;
-  margin: 2rem;
+  height: 10rem;
+  margin: 1rem;
   padding: 1rem;
   position: relative;     // so that menu can be absolutely positioned
   width: 15rem;
   text-align: initial;    // counteract parent's center setting
   vertical-align: top;    // see http://stackoverflow.com/a/19366432
 
+  p {
+    margin: 0.8rem 0;
+  }
+
   menu {
-    bottom: 1rem;
-    left: 0;
-    position: absolute;
     text-align: center;
     width: 100%;
   }
 
   menuitem {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+
+    a {
+      color: blue;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
 
 h1.project-title {
-  font-size: 1.3rem;
+  font-family: Garamond;
+  font-size: 2rem;
+  font-weight: normal;
+  letter-spacing: 1px;
   text-align: center;
 }
