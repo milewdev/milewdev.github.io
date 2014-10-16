@@ -58,13 +58,13 @@ body {
 // header
 //
 
-nav.page-nav {
+header.page-header {
   margin: 2rem auto;
   position: relative;
   max-width: 30rem;
 }
 
-menu.page-nav {
+nav.page-nav-bar {
   @include gradient;
   @include shadow;
 
@@ -80,25 +80,32 @@ menu.page-nav {
   left: 0;
   top: -1.2rem;
   width: 100%;
+}
+
+menu.page-nav {
+
+  // first menu on the left
+  &:first-child {
+    float: left;
+  }
+
+  // second menu on the right
+  &:last-child {
+    float: right;
+  }
+
+  // a vertical separator line between menu items
+  menuitem + menuitem {
+    border-left: 1px solid #77f;    // verticle line between menu items
+  }
 
   menuitem {
-    border-right: 1px solid #444;   // verticle line between menu items
-    border-left: 1px solid #77f;    // verticle line between menu items
     color: white;
     font-size: 0.8rem;
-    height: 100%;
     letter-spacing: 1px;            // small letters are more visible
-    margin-right: -4px;             // get rid of gap between 'inline' menuitems
     padding: 0.8em;                 // forces the borders to be full height
     padding-left: 1.2em;            // space before the vertical separator
     padding-right: 1.2em;           // space before the vertical separator
-
-    &:first-child {
-      border-left: none;
-    }
-    &:last-child {
-      border-right: none;
-    }
 
     a {
       color: inherit;
