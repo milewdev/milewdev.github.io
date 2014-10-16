@@ -18,11 +18,8 @@ header.page-header {
   max-width: 40rem; }
 
 nav.page-nav-bar {
-  background: #3671e7;
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #3671e7), color-stop(19%, #3671e7), color-stop(76%, #194fd7), color-stop(100%, #194fd7));
-  background: -webkit-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
-  background: linear-gradient(to bottom, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
+  background: -webkit-linear-gradient(top, #3671e7 0%, #3671e7 20%, #194fd7 80%, #194fd7 100%);
+  background: linear-gradient(to bottom, #3671e7 0%, #3671e7 20%, #194fd7 80%, #194fd7 100%);
   box-shadow: 0 0 6px 0px #333;
   border-radius: 3px;
   padding: 0.7rem 0;

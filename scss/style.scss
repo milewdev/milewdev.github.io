@@ -10,14 +10,7 @@
 
 @mixin gradient {
   // See http://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%200\%25\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%2019\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%2076\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%20100\%25\%29\%3B'
-  background: rgba(54,113,231,1);
-  background: -moz-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(54,113,231,1)), color-stop(19%, rgba(54,113,231,1)), color-stop(76%, rgba(25,79,215,1)), color-stop(100%, rgba(25,79,215,1)));
-  background: -webkit-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -o-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: -ms-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
+  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 20%, rgba(25,79,215,1) 80%, rgba(25,79,215,1) 100%);
 }
 
 @mixin shadow {
