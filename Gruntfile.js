@@ -22,7 +22,7 @@ module.exports = function (grunt) {
         livereload: true
       },
       html: {
-        files: ['index.html']
+        files: ['index.html']   // so that it causes a livereload
       },
       styles: {
         files: ['scss/style.scss'],
