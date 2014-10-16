@@ -84,17 +84,18 @@ nav.page-nav-bar {
 
 menu.page-nav {
 
-  // first menu on the left
+  // First menu on the left.
   &:first-child {
     float: left;
   }
 
-  // second menu on the right
+  // Second menu on the right.
   &:last-child {
     float: right;
   }
 
-  // a vertical separator line between menu items
+  // A vertical separator line between menu items.
+  // See http://www.jackreichert.com/2011/07/31/how-to-add-a-divider-between-menu-items-in-css-using-only-one-selector/
   menuitem + menuitem {
     border-left: 1px solid #77f;    // verticle line between menu items
   }
