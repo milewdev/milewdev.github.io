@@ -1,13 +1,7 @@
+// Uncomment this to put a red border around everything; helps with debugging.
 // * {
 //   border: 1px solid red;
 // }
-
-
-//
-// constants
-//
-
-$border-radius: 3px;
 
 
 //
@@ -28,6 +22,10 @@ $border-radius: 3px;
 
 @mixin shadow {
   box-shadow: 0 0 6px 0px #333;
+}
+
+@mixin border-radius {
+  border-radius: 3px;
 }
 
 
@@ -62,30 +60,39 @@ main {
 // header
 //
 
+// This is used to set the height of the black background bar at the top of the
+// page and also set the width of the nav bar.
 header.page-header {
-  margin: 2rem auto;
-  position: relative;
+  margin: 0 auto;           // horizontally center the nav bar
+  height: 2.2rem;
+  position: relative;       // so that page-nav-bar child can use absolute
   max-width: 40rem;
 }
 
+// This is the navigation bar at the top of the page. It s fixed to the bottom
+// of the .page-header element above so that it moves automatically if we adjust
+// the height of .page-header
 nav.page-nav-bar {
   @include gradient;
   @include shadow;
+  @include border-radius;
 
-  border-radius: $border-radius;
+  // Set l+r padding to 0 so that bar is centered;
+  // set t+b padding so that it looks nice.
+  padding: 0.7rem 0;        // t+b l+r
 
-  // Must set left and right padding to zero in order
-  // for the horizontally centered, absolutely positioned
-  // element to actually be centered.
-  padding-top: 0.7rem;
-  padding-bottom: 0.7rem;
-
+  // Fix to the bottom of the parent.
   position: absolute;
   left: 0;
-  top: -1.2rem;
+  bottom: -1.3rem;
+
+  // Actual width will be governed by the parent,
+  // which will grow/shrink as necessary.
   width: 100%;
 }
 
+// These are the menus on the page navigation bar.  Two menus are used, one for
+// the left end of the bar, the other for the right end.
 menu.page-nav {
 
   // First menu on the left.
@@ -107,10 +114,12 @@ menu.page-nav {
   menuitem {
     color: white;
     font-size: 0.8rem;
-    letter-spacing: 1px;            // small letters are more visible
-    padding: 0.8em;                 // forces the borders to be full height
-    padding-left: 1.2em;            // space before the vertical separator
-    padding-right: 1.2em;           // space before the vertical separator
+    letter-spacing: 1px;            // make the small letters are more visible
+
+    // Use top and bottom padding to cause the vertical separators to be full
+    // height.  Use left and right margins to allow some space between the menu
+    // items.
+    padding: 0.8em 1.2em;           // t+b l+r
 
     a {
       color: inherit;
@@ -129,8 +138,11 @@ menu.page-nav {
 //
 
 footer.page-footer {
-  padding-top: 0.6rem;
-  padding-bottom: 0.6rem;   // proper spacing when scrolled to bottom
+  // Some top padding so that we have some space between the top of the gray
+  // footer bar and the copyright notice; bottom padding so that when we scroll
+  // to the bottom of the page the copyright notice is not jammed to the bottom
+  // of the page.
+  padding: 0.6rem 0;
 }
 
 h1.page-footer {
@@ -148,7 +160,7 @@ h1.page-footer {
 section.introduction {
   font-size: 1.2rem;
   padding-top: 4rem;        // allow space for main nav bar
-  padding-bottom: 1rem;     // allow space before footer
+  padding-bottom: 1rem;     // allow space before next section
   text-align: center;
 
   p {
@@ -203,7 +215,6 @@ article.project {
 }
 
 h1.project-title {
-  font-family: Garamond;
   font-size: 2rem;
   font-weight: normal;
   letter-spacing: 1px;
