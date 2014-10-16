@@ -2,52 +2,139 @@
 //   border: 1px solid red;
 // }
 
+
+//
+// reset
+//
+
 body, div, header, footer, section, article, h1, menu, menuitem {
   margin: 0;
   padding: 0;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: Verdana;
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+
+//
+// general
+//
+
+h1, h2, h3, h4, h5, menuitem {
+  font-family: Georgia;
 }
 
 body {
-  background-color: #999;
-  font-family: Garamond;
+  background-color: black;
 }
 
-header.page-header {
+
+//
+// header
+//
+
+h1.page-title {
   color: white;
-  padding-top: 1em;
-  padding-bottom: 1em;
+  font-size: 1.4em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center;
 }
+
+nav.page-nav {
+  margin: 0 auto;
+  position: relative;
+  max-width: 600px;
+}
+
+menu.page-nav {
+
+  // All of this to set a gradient.
+  // See http://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%200\%25\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%2019\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%2076\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%20100\%25\%29\%3B'
+  background: rgba(54,113,231,1);
+  background: -moz-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(54,113,231,1)), color-stop(19%, rgba(54,113,231,1)), color-stop(76%, rgba(25,79,215,1)), color-stop(100%, rgba(25,79,215,1)));
+  background: -webkit-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -o-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: -ms-linear-gradient(top, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 19%, rgba(25,79,215,1) 76%, rgba(25,79,215,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
+
+  border-radius: 3px;
+  box-shadow: 0 0 6px 0px #333;
+
+  // Must set left and right padding to zero in order
+  // for the horizontally centered, absolutely positioned
+  // element to actually be centered.
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+
+  position: absolute;
+  left: 0;
+  top: -1.2rem;
+  width: 100%;
+
+  menuitem {
+    border-right: 1px solid #444;   // verticle line between menu items
+    border-left: 1px solid #77f;    // verticle line between menu items
+    color: white;
+    font-size: 0.8rem;
+    height: 100%;
+    letter-spacing: 1px;            // small letters are more visible
+    margin-right: -4px;             // get rid of gap between 'inline' menuitems
+    padding: 0.8em;                 // forces the borders to be full height
+    padding-left: 1.2em;            // space before the vertical separator
+    padding-right: 1.2em;           // space before the vertical separator
+
+    &:first-child {
+      border-left: none;
+    }
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+
+
+//
+// footer
+//
 
 footer.page-footer {
   padding-top: 0.6rem;
   padding-bottom: 0.6rem;   // proper spacing when scrolled to bottom
 }
 
-.projects {
-  background-color: white;
+h1.page-footer {
+  color: #ddd;
+  font-size: 0.7rem;
+  font-weight: normal;
   text-align: center;
 }
+
+
 //
-// @media all and (min-width: 0) and (max-width: (2 * $project-width)) {
-//   .projects {
-//     width: (1 * $project-width) + 1;
-//   }
-// }
+// projects
 //
-// @media all and (min-width: 2 * $project-width) and (max-width: (3 * $project-width)) {
-//   .projects {
-//     width: (2 * $project-width) + 1;
-//   }
-// }
+
+.projects {
+  background-color: white;
+  padding-top: 2rem;        // allow space for main nav bar
+  text-align: center;
+}
 
 .project {
-  // background-color: #99f;
-  border-radius: 0.2rem;
-  box-shadow: 0px 0px 5px 1px #ccc;
+  background-color: #f90;
+  border-radius: 0.4rem;
+  // box-shadow: 0px 0px 5px 3px #aaa;
   display: inline-block;
   height: 11rem;
   margin: 2rem;
@@ -69,19 +156,6 @@ footer.page-footer {
     margin-left: 0.5rem;
     margin-right: 0.5rem;
   }
-}
-
-h1.page-title {
-  font-size: 1.2rem;
-  font-weight: normal;
-  text-align: center;
-}
-
-h1.page-footer {
-  color: #ddd;
-  font-size: 0.7rem;
-  font-weight: normal;
-  text-align: center;
 }
 
 h1.project-title {

@@ -1,0 +1,2 @@
+Nice website to generate gradients (and border radius, box shadow):
+  http://www.cssmatic.com

@@ -2,29 +2,83 @@ body, div, header, footer, section, article, h1, menu, menuitem {
   margin: 0;
   padding: 0; }
 
-h1, h2, h3, h4, h5 {
-  font-family: Verdana; }
+a {
+  color: inherit;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+h1, h2, h3, h4, h5, menuitem {
+  font-family: Georgia; }
 
 body {
-  background-color: #999;
-  font-family: Garamond; }
+  background-color: black; }
 
-header.page-header {
+h1.page-title {
   color: white;
-  padding-top: 1em;
-  padding-bottom: 1em; }
+  font-size: 1.4em;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  text-align: center; }
+
+nav.page-nav {
+  margin: 0 auto;
+  position: relative;
+  max-width: 600px; }
+
+menu.page-nav {
+  background: #3671e7;
+  background: -moz-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #3671e7), color-stop(19%, #3671e7), color-stop(76%, #194fd7), color-stop(100%, #194fd7));
+  background: -webkit-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
+  background: -o-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
+  background: -ms-linear-gradient(top, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
+  background: linear-gradient(to bottom, #3671e7 0%, #3671e7 19%, #194fd7 76%, #194fd7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3671e7', endColorstr='#194fd7', GradientType=0 );
+  border-radius: 3px;
+  box-shadow: 0 0 6px 0px #333;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+  position: absolute;
+  left: 0;
+  top: -1.2rem;
+  width: 100%; }
+  menu.page-nav menuitem {
+    border-right: 1px solid #444;
+    border-left: 1px solid #77f;
+    color: white;
+    font-size: 0.8rem;
+    height: 100%;
+    letter-spacing: 1px;
+    margin-right: -4px;
+    padding: 0.8em;
+    padding-left: 1.2em;
+    padding-right: 1.2em; }
+    menu.page-nav menuitem:first-child {
+      border-left: none; }
+    menu.page-nav menuitem:last-child {
+      border-right: none; }
 
 footer.page-footer {
   padding-top: 0.6rem;
   padding-bottom: 0.6rem; }
 
+h1.page-footer {
+  color: #ddd;
+  font-size: 0.7rem;
+  font-weight: normal;
+  text-align: center; }
+
 .projects {
   background-color: white;
+  padding-top: 2rem;
   text-align: center; }
 
 .project {
-  border-radius: 0.2rem;
-  box-shadow: 0px 0px 5px 1px #ccc;
+  background-color: #f90;
+  border-radius: 0.4rem;
   display: inline-block;
   height: 11rem;
   margin: 2rem;
@@ -42,17 +96,6 @@ footer.page-footer {
   .project menuitem {
     margin-left: 0.5rem;
     margin-right: 0.5rem; }
-
-h1.page-title {
-  font-size: 1.2rem;
-  font-weight: normal;
-  text-align: center; }
-
-h1.page-footer {
-  color: #ddd;
-  font-size: 0.7rem;
-  font-weight: normal;
-  text-align: center; }
 
 h1.project-title {
   font-size: 1.3rem;
