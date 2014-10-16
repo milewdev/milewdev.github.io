@@ -1,2 +1,5 @@
 Nice website to generate gradients (and border radius, box shadow):
   http://www.cssmatic.com
+
+autoprefixer to deal with browser-specific prefix css:
+  http://css-tricks.com/autoprefixer/
