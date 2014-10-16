@@ -21,7 +21,7 @@
   border-radius: 3px;
 }
 
-@mixin link-style($color) {
+@mixin link-style($color: #69f) {
   a {
     color: $color;
     text-decoration: none;
@@ -143,7 +143,7 @@ footer.page-footer {
   padding: 0.6rem 0;
 
   p {
-    @include link-style(inherit);
+    @include link-style;
 
     color: #bbb;
     font-size: 0.8rem;
@@ -200,7 +200,7 @@ article.project {
   }
 
   menuitem {
-    @include link-style(blue);
+    @include link-style;
 
     margin-left: 0.6rem;
     margin-right: 0.6rem;

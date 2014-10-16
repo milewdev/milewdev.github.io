@@ -54,7 +54,7 @@ footer.page-footer {
     margin: 0.2rem;
     text-align: center; }
     footer.page-footer p a {
-      color: inherit;
+      color: #69f;
       text-decoration: none; }
       footer.page-footer p a:hover {
         text-decoration: underline; }
@@ -91,7 +91,7 @@ article.project {
     margin-left: 0.6rem;
     margin-right: 0.6rem; }
     article.project menuitem a {
-      color: blue;
+      color: #69f;
       text-decoration: none; }
       article.project menuitem a:hover {
         text-decoration: underline; }
