@@ -10,7 +10,7 @@ PROJECT_NAME              = "milewdev.github.io"
 VM_NAME                   = PROJECT_NAME
 PROJECT_GITHUB_URL        = "https://github.com/milewdev/#{PROJECT_NAME}.git"
 PROJECT_VM_DIR            = "/Users/vagrant/Documents/#{PROJECT_NAME}"
-PROVISIONER_URL           = "https://raw.githubusercontent.com/milewgit/vm-provisioner/v2/Provisioner.rb"
+PROVISIONER_URL           = "https://raw.githubusercontent.com/milewdev/vm-provisioner/v2/Provisioner.rb"
 
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |vagrant_config|
