@@ -51,7 +51,6 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('build', ['sass', 'autoprefixer']);
-
   grunt.registerTask('serve', function (target) {
     grunt.task.run(['connect:livereload', 'watch']);
   });
