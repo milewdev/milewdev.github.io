@@ -19,7 +19,7 @@ module.exports = function (grunt) {
 
     watch: {
       options: {
-        livereload: true
+        livereload: '<%= connect.options.livereload %>'
       },
       html: {
         files: ['index.html']   // so that it causes a livereload
@@ -28,12 +28,31 @@ module.exports = function (grunt) {
         files: ['scss/style.scss'],
         tasks: ['build']
       }
+    },
+
+    connect: {
+      options: {
+        port: 8000,
+        livereload: 35729,
+        hostname: 'localhost'
+      },
+      livereload: {
+        options: {
+          base: ['.']
+        }
+      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-autoprefixer');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
-  grunt.registerTask('build', ['sass', 'autoprefixer'])
+  grunt.registerTask('build', ['sass', 'autoprefixer']);
+
+  grunt.registerTask('serve', function (target) {
+    grunt.task.run(['connect:livereload', 'watch']);
+  });
 };
