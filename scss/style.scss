@@ -84,12 +84,12 @@ nav.page-nav-bar {
 
   // Set l+r padding to 0 so that bar is centered;
   // set t+b padding so that it looks nice.
-  padding: 0.7rem 0;        // t+b l+r
+  padding: 0.5rem 0;        // t+b l+r
 
   // Fix to the bottom of the parent.
   position: absolute;
   left: 0;
-  bottom: -1.3rem;
+  bottom: -1.1rem;
 
   // Actual width will be governed by the parent,
   // which will grow/shrink as necessary.
@@ -112,9 +112,9 @@ menu.page-nav {
 
   // A vertical separator line between menu items.
   // See http://www.jackreichert.com/2011/07/31/how-to-add-a-divider-between-menu-items-in-css-using-only-one-selector/
-  menuitem + menuitem {
-    border-left: 1px solid #77f;    // verticle line between menu items
-  }
+  // menuitem + menuitem {
+  //   border-left: 1px solid #77f;    // verticle line between menu items
+  // }
 
   menuitem {
     @include link-style(inherit);
@@ -126,7 +126,7 @@ menu.page-nav {
     // Use top and bottom padding to cause the vertical separators to be full
     // height.  Use left and right margins to allow some space between the menu
     // items.
-    padding: 0.8em 1.2em;           // t+b l+r
+    padding: 0.8em 0.8em;           // t+b l+r
   }
 }
 
