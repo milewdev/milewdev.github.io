@@ -1,14 +1,14 @@
 #
-# Vagrantfile to create milewgit.github.io development environment.
+# Vagrantfile to create milewdev.github.io development environment.
 #
 
 
 VAGRANTFILE_API_VERSION   = "2"
 BOX                       = "OSX109"
 PROVIDER_NAME             = "vmware_fusion"
-PROJECT_NAME              = "milewgit.github.io"
+PROJECT_NAME              = "milewdev.github.io"
 VM_NAME                   = PROJECT_NAME
-PROJECT_GITHUB_URL        = "https://github.com/milewgit/#{PROJECT_NAME}.git"
+PROJECT_GITHUB_URL        = "https://github.com/milewdev/#{PROJECT_NAME}.git"
 PROJECT_VM_DIR            = "/Users/vagrant/Documents/#{PROJECT_NAME}"
 PROVISIONER_URL           = "https://raw.githubusercontent.com/milewgit/vm-provisioner/v2/Provisioner.rb"
 
