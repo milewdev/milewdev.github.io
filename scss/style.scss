@@ -1,214 +1,61 @@
-// Uncomment this to put a red border around everything; helps with debugging.
-// * {
-//   border: 1px solid red;
-// }
+@import 'library';
 
-
-//
-// mixins
-//
-
-@mixin gradient {
-  // See http://www.cssmatic.com/gradient-generator#'\-moz\-linear\-gradient\%28top\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%200\%25\%2C\%20rgba\%2854\%2C113\%2C231\%2C1\%29\%2019\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%2076\%25\%2C\%20rgba\%2825\%2C79\%2C215\%2C1\%29\%20100\%25\%29\%3B'
-  background: linear-gradient(to bottom, rgba(54,113,231,1) 0%, rgba(54,113,231,1) 20%, rgba(25,79,215,1) 80%, rgba(25,79,215,1) 100%);
-}
-
-@mixin shadow {
-  box-shadow: 0 0 4px 0px #333;
-}
-
-@mixin border-radius {
-  border-radius: 3px;
-}
-
-@mixin link-style($color: #69f) {
-  a {
-    color: $color;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
-
-
-//
-// reset
-//
-
-body, div, header, footer, section, article, h1, menu, menuitem {
-  margin: 0;
-  padding: 0;
-}
-
-
-//
-// general
-//
-
-h1, h2, h3, h4, h5, menuitem, footer {
-  font-family: 'Lucida Console', sans-serif;
-}
+@include reset;
+@include box-sizing-fix;
+@include main-header;
+@include main-footer;
+@include link-style;
+// @include debug-show-all-borders;
 
 body {
-  background-color: #444;
-  font-family: Georgia, serif;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
 }
-
-main {
-  background-color: white;
-}
-
-
-//
-// header
-//
-
-// This is used to set the height of the black background bar at the top of the
-// page and also set the width of the nav bar.
-header.page-header {
-  margin: 0 auto;           // horizontally center the nav bar
-  height: 2.2rem;
-  position: relative;       // so that page-nav-bar child can use absolute
-  max-width: 40rem;
-}
-
-// This is the navigation bar at the top of the page. It s fixed to the bottom
-// of the .page-header element above so that it moves automatically if we adjust
-// the height of .page-header
-nav.page-nav-bar {
-  @include gradient;
-  @include shadow;
-  @include border-radius;
-
-  // Set l+r padding to 0 so that bar is centered;
-  // set t+b padding so that it looks nice.
-  padding: 0.5rem 0;        // t+b l+r
-
-  // Fix to the bottom of the parent.
-  position: absolute;
-  left: 0;
-  bottom: -1.1rem;
-
-  // Actual width will be governed by the parent,
-  // which will grow/shrink as necessary.
-  width: 100%;
-}
-
-// These are the menus on the page navigation bar.  Two menus are used, one for
-// the left end of the bar, the other for the right end.
-menu.page-nav {
-
-  // First menu on the left.
-  &:first-child {
-    float: left;
-  }
-
-  // Second menu on the right.
-  &:last-child {
-    float: right;
-  }
-
-  // A vertical separator line between menu items.
-  // See http://www.jackreichert.com/2011/07/31/how-to-add-a-divider-between-menu-items-in-css-using-only-one-selector/
-  // menuitem + menuitem {
-  //   border-left: 1px solid #77f;    // verticle line between menu items
-  // }
-
-  menuitem {
-    @include link-style(inherit);
-
-    color: white;
-    font-size: 0.8rem;
-    letter-spacing: 1px;            // make the small letters are more visible
-
-    // Use top and bottom padding to cause the vertical separators to be full
-    // height.  Use left and right margins to allow some space between the menu
-    // items.
-    padding: 0.8em 0.8em;           // t+b l+r
-  }
-}
-
-
-//
-// footer
-//
-
-footer.page-footer {
-  // Some top padding so that we have some space between the top of the gray
-  // footer bar and the copyright notice; bottom padding so that when we scroll
-  // to the bottom of the page the copyright notice is not jammed to the bottom
-  // of the page.
-  padding: 0.6rem 0;
-
-  p {
-    @include link-style;
-
-    color: #bbb;
-    font-size: 0.8rem;
-    margin: 0.2rem;
-    text-align: center;
-  }
-}
-
-
-//
-// introduction
-//
 
 section.introduction {
-  font-size: 1.2rem;
-  padding-top: 4rem;        // allow space for main nav bar
-  padding-bottom: 1rem;     // allow space before next section
+  margin: 0 $lr-crumple-zone;
   text-align: center;
 
   p {
-    margin: 0 auto;
-    width: 26rem;
+    margin: 2em auto 1em auto;
+    max-width: 30em;
   }
 }
 
+.projects {
+  // Each project is represented as a box; the boxes are
+  // displayed in rows, with under-filled rows centered.
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
 
-//
-// projects
-//
-
-section.projects {
-  padding-bottom: 2rem;     // allow space before footer
-  text-align: center;
+  // To improve the look/behaviour, the lr crumple zone is
+  // shared (hence /2) with the margin around each project.
+  margin: 0 ($lr-crumple-zone / 2);
 }
 
-article.project {
-  display: inline-block;
-  height: 10rem;
-  margin: 1rem;
-  padding: 1rem;
-  position: relative;     // so that menu can be absolutely positioned
-  width: 16rem;
-  text-align: initial;    // counteract parent's center setting
-  vertical-align: top;    // see http://stackoverflow.com/a/19366432
+article {
+  margin: ($lr-crumple-zone / 2);
+  width: 17em;
 
-  p {
-    margin: 0.8rem 0;
+  h1 {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    letter-spacing: 1px;
+    margin: 0 0 0.5em 0;
+    text-align: center;
+    word-spacing: 0.12em;
   }
 
   menu {
-    text-align: center;
+    margin-top: 0.3em;      // separate the menu from the content above it
+    text-align: center;     // center menu items
     width: 100%;
   }
 
   menuitem {
-    @include link-style;
-
-    margin-left: 0.6rem;
-    margin-right: 0.6rem;
+    margin: 0 0.6em;        // spacing between menu items
   }
-}
-
-h1.project-title {
-  font-size: 2rem;
-  font-weight: normal;
-  letter-spacing: 1px;
-  text-align: center;
 }

@@ -8,75 +8,73 @@
   </head>
 
   <body>
-
-    <header class='page-header'>
-      <nav class='page-nav-bar'>
-        <menu class='page-nav'>
-          <menuitem><a href='/'>Home</a></menuitem>
+    <header>
+      <nav>
+        <menu>
+          <menuitem><a href='index.html'>Home</a></menuitem>
         </menu>
-        <menu class='page-nav'>
+        <menu>
           <menuitem><a href='https://github.com/milewdev'>GitHub</a></menuitem>
           <menuitem><a href='mailto:milewdev@gmail.com'>Contact</a></menuitem>
         </menu>
       </nav>
     </header>
 
-    <!-- 'main' tag is used to set the background color of the main page area -->
-    <main>
-      <section class='introduction'>
+    <section class='introduction'>
+      <p>
+        A selection of projects that were mainly exercises in learning Ruby,
+        CoffeeScript, SASS, etc.
+      </p>
+    </section>
+
+    <section class='projects'>
+      <article>
+        <h1>tchart</h2>
         <p>
-          A selection of projects that were mainly exercises in learning Ruby,
-          CoffeeScript, SASS, etc.
+          tchart is a command line program that generates TikZ code to create
+          plots of date-based data that can be embedded in TeX documents.
+        </p>
+        <menu>
+          <menuitem><a href='http://milewdev.github.io/tchart.doc/'>documentation</a></menuitem>
+          <menuitem><a href='https://github.com/milewdev/tchart'>source</a></menuitem>
+        </menu>
+      </article>
+
+      <article>
+        <h1>TinyMock</h2>
+        <p>
+          A very small coffeescript mocking framework.  This was written as an
+          exercise to learn CoffeeScript and the JavaScript object model.
+        </p>
+        <menu>
+          <menuitem><a href='http://milewdev.github.io/TinyMock.doc/'>documentation</a></menuitem>
+          <menuitem><a href='https://github.com/milewdev/tinymock'>source</a></menuitem>
+        </menu>
+      </article>
+
+      <article>
+        <h1>css-lab</h2>
+        <p>
+          A small interactive CSS playground (currently only ul & li margins
+          and padding).  This was an exercise in understanding whitespace
+          around ul and li elements.
+        </p>
+        <menu>
+          <menuitem><a href='http://milewdev.github.io/css-lab/'>website</a></menuitem>
+          <menuitem><a href='https://github.com/milewdev/css-lab'>source</a></menuitem>
+        </menu>
+      </article>
+    </section>
+
+    <footer>
+      <section>
+        <p>
+          &copy; 2014 Michael Lewandowski
+        </p>
+        <p>
+          Hosted on <a href='https://pages.github.com'>GitHub Pages</a>
         </p>
       </section>
-
-      <section class='projects'>
-        <article class='project'>
-          <h1 class='project-title'>tchart</h2>
-          <p>
-            tchart is a command line program that generates TikZ code to create
-            plots of date-based data that can be embedded in TeX documents.
-          </p>
-          <menu>
-            <menuitem><a href='http://milewdev.github.io/tchart.doc/'>documentation</a></menuitem>
-            <menuitem><a href='https://github.com/milewdev/tchart'>source</a></menuitem>
-          </menu>
-        </article>
-
-        <article class='project'>
-          <h1 class='project-title'>TinyMock</h2>
-          <p>
-            A very small coffeescript mocking framework.  This was written as an
-            exercise to learn CoffeeScript and the JavaScript object model.
-          </p>
-          <menu>
-            <menuitem><a href='http://milewdev.github.io/TinyMock.doc/'>documentation</a></menuitem>
-            <menuitem><a href='https://github.com/milewdev/tinymock'>source</a></menuitem>
-          </menu>
-        </article>
-
-        <article class='project'>
-          <h1 class='project-title'>css-lab</h2>
-          <p>
-            A small interactive CSS playground (currently only ul & li margins
-            and padding).  This was an exercise in understanding whitespace
-            around ul and li elements.
-          </p>
-          <menu>
-            <menuitem><a href='http://milewdev.github.io/css-lab/'>website</a></menuitem>
-            <menuitem><a href='https://github.com/milewdev/css-lab'>source</a></menuitem>
-          </menu>
-        </article>
-      </section>
-    </main>
-
-    <footer class='page-footer'>
-      <p>
-        &copy;2014 Michael Lewandowski
-      </p>
-      <p>
-        Hosted on <a href='https://pages.github.com'>GitHub Pages</a>
-      </p>
     </footer>
 
   </body>
