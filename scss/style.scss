@@ -22,6 +22,13 @@ section.introduction {
   }
 }
 
+// An extra wrapper to limit the width of the .projects
+// element and center it on the page.
+.lr-crumple-zone {
+  margin: 0 auto;
+  max-width: $body-width + (2 * ($lr-crumple-zone / 2 ));
+}
+
 .projects {
   // Each project is represented as a box; the boxes are
   // displayed in rows, with under-filled rows centered.
